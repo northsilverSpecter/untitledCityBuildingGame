@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy84sdw05kp5p"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_mt172"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mt172")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 192.0
+
+[node name="money" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 39.0
+
+[node name="resources" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 168.0
+offset_bottom = 71.0
+
+[node name="demands" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 168.0
+offset_bottom = 111.0
+
+[node name="total" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 151.0

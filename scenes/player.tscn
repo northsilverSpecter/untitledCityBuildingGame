@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk8ddhje6vd1w"]
+
+[ext_resource type="PackedScene" uid="uid://ckf2s4rk4xj56" path="res://assets/basic cursor.glb" id="1_8cbyg"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_fu1fx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5xwkc"]
+height = 0.4
+radius = 1.0
+
+[sub_resource type="Animation" id="Animation_tgabr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ghr8c"]
+resource_name = "speen"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wgsf2"]
+_data = {
+"RESET": SubResource("Animation_tgabr"),
+"speen": SubResource("Animation_ghr8c")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ud40w"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_fu1fx")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("CylinderShape3D_5xwkc")
+
+[node name="basic_cursor" parent="." instance=ExtResource("1_8cbyg")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="basic_cursor"]
+libraries = {
+"": SubResource("AnimationLibrary_wgsf2")
+}
+
+[node name="camera_anchor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camera_anchor"]
+rotation_order = 1
+shape = SubResource("SphereShape3D_ud40w")
+spring_length = 7.5
+
+[node name="Camera3D" type="Camera3D" parent="camera_anchor/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 3)
+v_offset = 1.7
+doppler_tracking = 1
+current = true
