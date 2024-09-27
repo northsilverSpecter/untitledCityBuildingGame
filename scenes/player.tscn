@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk8ddhje6vd1w"]
+[gd_scene load_steps=9 format=3 uid="uid://bk8ddhje6vd1w"]
 
 [ext_resource type="PackedScene" uid="uid://ckf2s4rk4xj56" path="res://assets/basic cursor.glb" id="1_8cbyg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fu1fx"]
+[ext_resource type="AudioStream" uid="uid://dnokrgr3svsb1" path="res://sounds/scroll.wav" id="3_o8utp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5xwkc"]
 height = 0.4
@@ -74,3 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0,
 v_offset = 1.7
 doppler_tracking = 1
 current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="camera_anchor/SpringArm3D/Camera3D"]
+stream = ExtResource("3_o8utp")
+volume_db = 10.0

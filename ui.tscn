@@ -45,3 +45,11 @@ offset_left = 16.0
 offset_top = 128.0
 offset_right = 168.0
 offset_bottom = 151.0
+
+[node name="level_zoom" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 31.0
+text = "{}  zoomies"
