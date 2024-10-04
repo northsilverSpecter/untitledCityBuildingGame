@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vtbghtamyj65"]
+
+[ext_resource type="Script" path="res://scripts/selection.gd" id="1_o2mg4"]
+
+[node name="selection" type="Node3D"]
+script = ExtResource("1_o2mg4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(1, 2, 1)
