@@ -1,4 +1,4 @@
-# Untitled City Building Game [Abandond
+# Untitled City Building Game [Abandoned]
 
 It is a godot game about building a city, reminisces SimCity 2000 but in a 3d space.
 
