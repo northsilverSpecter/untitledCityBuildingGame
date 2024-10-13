@@ -1,6 +1,8 @@
-# Untitled City Building Game
+# Untitled City Building Game [Abandond
 
 It is a godot game about building a city, reminisces SimCity 2000 but in a 3d space.
+
+### As of now, the project's abandoned as to move to Love2d in favor instead of Godot. Tally Ho!
 
 -----------------------------------------------------------\
 
